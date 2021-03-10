@@ -1,4 +1,3 @@
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Iterator;
@@ -11,16 +10,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 //added line
 public class Main {
-
-
     public static void main (String[] args)throws IOException{
-
-
         //FOLLOWING EXAMPLE TAKEN FROM https://www.codejava.net/coding/how-to-read-excel-files-in-java-using-apache-poi
         //Example shows how to iterate over every box in an excel sheet row by row left to right
 
         String excelFilePath = "GroceryStoreData.xlsx";
-        FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
+        FileInputStream inputStream = new FileInputStream(excelFilePath);
 
         Workbook workbook = new XSSFWorkbook(inputStream);
         Sheet firstSheet = workbook.getSheetAt(0);
@@ -43,7 +38,6 @@ public class Main {
                     case NUMERIC:
                         System.out.print(cell.getNumericCellValue());
                         break;
-
                 }
                 System.out.println(" - ");
             }
@@ -52,7 +46,5 @@ public class Main {
         workbook.close();
         inputStream.close();
         //END EXAMPLE FROM https://www.codejava.net/coding/how-to-read-excel-files-in-java-using-apache-poi
-
-
     }
 }
