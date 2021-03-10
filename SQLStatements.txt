@@ -1,1 +1,229 @@
-testing this
+Example Entry (Entries go beneath one of the four Categories below):
+
+Description: This script selects exampleColumn from exampleTable to serve as an example! (This can really be as long or short as you want, more detail is appreciated if the SQL statement is complex)
+
+SQL:
+
+SELECT exampleColumn
+FROM exampleTable
+
+____________________________________________________________________________
+
+Instantiation/Table Creation
+
+USER DB
+
+Description: Create the Users table in the User and Login DB
+
+SQL:
+
+CREATE TABLE Users (
+	userID INT NOT NULL AUTO_INCREMENT,
+	userName VARCHAR(100) NOT NULL,
+	passwordHash VARCHAR(1000),
+	userType VARCHAR (30),
+	email VARCHAR(100),
+	PRIMARY KEY(userID)
+);
+
+LISTS DB
+
+
+Description: Create the ShoppingLists table in the lists database
+
+SQL:
+
+CREATE TABLE ShoppingLists(
+	shoppingListID INT NOT NULL,
+userID INT NOT NULL,
+	listName VARCHAR(100) NOT NULL,
+	listDateCreated DATETIME DEFAULT CURRENT_TIMESTAMP,
+listPublicStatus VARCHAR(10) DEFAULT “private”,
+PRIMARY KEY (shoppingListID)
+);
+
+Description: Create the ShoppingListContents table in the lists database
+
+SQL:
+
+CREATE TABLE ShoppingListContents(
+	shoppingListID INT NOT NULL,
+	catName VARCHAR(100) NOT NULL,
+	quantityItem INT,
+	PRIMARY KEY (shoppingListID, catName),
+	FOREIGN KEY (shoppingListID)
+		REFERENCES ShoppingLists (shoppingListID)
+		ON DELETE CASCADE
+);
+
+
+Description: Create the SharedShoppingLists table in the lists database
+
+SQL:
+
+CREATE TABLE SharedShoppingLists(
+	userID INT NOT NULL,
+	shoppingListID INT NOT NULL,
+	PRIMARY KEY (userID, shoppingListID),
+	FOREIGN KEY (shoppingListID)
+		REFERENCES ShoppingLists (shoppingListID)
+		ON DELETE CASCADE
+);
+
+Store Info, Nodes and Categories DB
+
+Description: Create Categories table in the Store Info, Nodes and Categories DB
+
+SQL:
+
+CREATE TABLE Categories (
+	catName VARCHAR(100) NOT NULL,
+	catDescription VARCHAR(1000) NOT NULL,
+	catStockNum INT DEFAULT 1,
+    	saleBool BOOLEAN DEFAULT FALSE
+PRIMARY KEY (catName)
+);
+
+Description: Create PathFindingNodes table that will exist in the Store Info, Nodes and Categories DB database.
+
+SQL:
+
+CREATE TABLE PathFindingNodes(
+	pathNodeID INT NOT NULL,
+	northNodeID INT,
+	northNodeDistance INT,
+	eastNodeID INT,
+	eastNodeDistance INT,
+	southNodeID INT,
+	southNodeDistance INT,
+	westNodeID INT,
+	westNodeDistance INT,
+PRIMARY KEY(pathNodeID)
+);
+
+Description: Create a Departments table Store Info, Nodes and Categories DB database.
+
+SQL:
+
+CREATE TABLE Departments (
+    	departmentID INT NOT NULL,
+    	departmentName VARCHAR(100) NOT NULL,
+PRIMARY KEY(departmentID)
+);
+Description: Create the categories table that contains category name, category description, stock number and sale status, with category name as primary key.
+SQL:
+CREATE TABLE Categories (
+  	catName VARCHAR(100) NOT NULL,
+ 	 catDescription VARCHAR(1000) CHARACTER SET 'DEFAULT' NULL,
+ 	 stockNum INT NOT NULL,
+  	saleBool TINYINT NOT NULL,
+  PRIMARY KEY (catName)
+
+
+Description: Create the stores table that contains storeID, name, address, and storeLayout in Store info, Nodes, and categories DB .
+
+SQL:
+
+CREATE TABLE Stores (
+	storeID INT AUTO_INCREMENT NOT NULL,
+	storeName VARCHAR(100) NOT NULL,
+	address VARCHAR(100) NOT NULL,
+	storeLayoutPicLocationString VARCHAR (100),
+	PRIMARY KEY(storeID)
+
+);
+
+Description: Create PathNodeCatAssociation table in the Store Info, Nodes and Categories DB
+
+SQL:
+
+CREATE TABLE PathNodeCatAssociations(
+	pathNodeID INT NOT NULL,
+	catName VARCHAR(100) NOT NULL,
+	aisle INT,
+	rack INT,
+	shelf VARCHAR(10),
+	side VARCHAR(10),
+	PRIMARY KEY (pathNodeID, catName),
+	FOREIGN KEY (pathNodeID)
+		REFERENCES PathFindingNodes (pathNodeID),
+	FOREIGN KEY (catName)
+		REFERENCES Categories (catName)
+);
+
+Description: Creates PathNodeDeptAssociations table in the Store Info, Nodes and Categories DB
+
+SQL:
+
+CREATE TABLE PathNodeDeptAssociations (
+	pathNodeID INT,
+    departmentID INT,
+    PRIMARY KEY (pathNodeID, departmentID),
+    FOREIGN KEY (pathNodeID)
+		REFERENCES PathFindingNodes (pathNodeID),
+	FOREIGN KEY (departmentID)
+		REFERENCES Departments (departmentID)
+);
+
+Maintenance/Table Manipulation
+
+USER DB
+LISTS DB
+
+Description: Deletes all tables from List DB
+
+SQL:
+
+DROP TABLE SharedShoppingLists;
+DROP TABLE ShoppingListContents;
+DROP TABLE ShoppingLists;
+
+Description: Puts dummy data into the lists DB
+
+SQL:
+
+INSERT INTO ShoppingLists (userID, listName)
+	VALUES (5, "Sunday Snacks"), (3, "Saturday List"), (3, "Superbowl List"), (7, "Chip Selection");
+
+INSERT INTO ShoppingListContents (shoppingListID, catName)
+	VALUES(2, "Brownies"), (2, "Cupcakes"), (2, "Fudge"), (2, "Cookies"), (1, "Chips"),
+    (1, "Queso Dip"), (1, "Salsa"), (3, "Frozen Wings"), (3, "Celery"), (3, "Blue Cheese");
+
+INSERT INTO SharedShoppingLists (userID, shoppingListID)
+	VALUES (2, 1), (7, 3);
+
+Description: Tests foreign key constraint functionality and bad input case
+
+SQL:
+
+INSERT INTO ShoppingListContents (shoppingListID, catName)
+	VALUES (5, "Ketchup");
+
+DELETE FROM SharedShoppingLists WHERE shoppingListID = 3 AND userID = 7;
+
+DELETE FROM ShoppingLists WHERE shoppingListID = 1;
+
+
+
+Store Info, Nodes and Categories DB
+
+Description: inserting dummy data into the store DB
+
+SQL:
+INSERT INTO `test_rootsDB`.`Stores` (`storeID`, `storeName`, `address`) VALUES ('1', 'PriceShopper', '123 main Street');
+
+
+
+
+Data Input
+
+USER DB
+LISTS DB
+Store Info, Nodes and Categories DB
+
+Data Querying
+
+USER DB
+LISTS DB
+Store Info, Nodes and Categories DB
+
