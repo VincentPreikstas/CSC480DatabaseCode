@@ -19,17 +19,11 @@ public class Main {
 
         Workbook workbook = new XSSFWorkbook(inputStream);
         Sheet firstSheet = workbook.getSheetAt(0);
-        Iterator<Row> iterator = firstSheet.iterator();
-        System.out.println("THIS IS THE CHANGE :)");
-        System.out.println("ANOTHER CHANGE!!!!!!!!!!!!");
-        System.out.println("MORE CHANGES!!!!!!!!!!!!!!!");
-        System.out.println("CHANGING AFTER NAZAR");
-        while (iterator.hasNext()){
-            Row nextRow = iterator.next();
+        for (Row nextRow : firstSheet) {
             Iterator<Cell> cellIterator = nextRow.cellIterator();
-            while (cellIterator.hasNext()){
+            while (cellIterator.hasNext()) {
                 Cell cell = cellIterator.next();
-                switch (cell.getCellType()){
+                switch (cell.getCellType()) {
                     case STRING:
                         System.out.print(cell.getStringCellValue());
                         break;
