@@ -10,7 +10,7 @@ public class DataInputFunctions {
         return "INSERT INTO database (catName, catDescription, catStockNum, saleBool, picURI) VALUES " +
                 "(" + catName + ", " + catDescription + ", " + catStockNum + ", " + saleBool + ", " + picURI + ");";
     }
-    /*
+
     //DONT DO
     public void catInstantiator (){
         // Calls catInsertSQLGenerator a lot to generate then execute sql queries
@@ -19,12 +19,14 @@ public class DataInputFunctions {
     }
 
 
+
     //Nazar
     public String locationInsertSQLGenerator (int locationID, int aisle, int rack, String shelf, String side){
-        String SQLStatement;
-        return SQLStatement;
-    }
 
+        return "INSERT INTO database (locationID, aisle, rack, shelf, side) VALUES " +
+                "(" + locationID + ", " + aisle + ", " + rack + ", " + shelf + ", " + side + ");";
+    }
+    /*
     //DONT DO
     public void locationInstantiator(){
         // Calls Location InterSQL Generator a lot to generate and then execute sql queries
