@@ -1,3 +1,5 @@
 target/
 .idea
 CSC480DatabaseCode.iml
+.stfolder
+.stignore
