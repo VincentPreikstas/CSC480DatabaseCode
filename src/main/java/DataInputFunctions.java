@@ -5,11 +5,12 @@ public class DataInputFunctions {
     }
 
 
-    /*
+
     public String catInsertSQLGenerator (String catName, String catDescription, int catStockNum, boolean saleBool, String picURI){
-        String SQLStatement;
-        return SQLStatement;
+        return "INSERT INTO database (catName, catDescription, catStockNum, saleBool, picURI) VALUES " +
+                "(" + catName + ", " + catDescription + ", " + catStockNum + ", " + saleBool + ", " + picURI + ");";
     }
+    /*
     public void catInstantiator (){
         // Calls catInsertSQLGenerator a lot to generate then execute sql queries
         // may require connection to db with a db object as an argument
