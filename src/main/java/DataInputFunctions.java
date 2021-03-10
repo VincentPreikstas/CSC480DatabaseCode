@@ -22,7 +22,6 @@ public class DataInputFunctions {
 
     //Nazar
     public String locationInsertSQLGenerator (int locationID, int aisle, int rack, String shelf, String side){
-
         return "INSERT INTO database (locationID, aisle, rack, shelf, side) VALUES " +
                 "(" + locationID + ", " + aisle + ", " + rack + ", " + shelf + ", " + side + ");";
     }
