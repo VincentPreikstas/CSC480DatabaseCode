@@ -87,12 +87,6 @@ public class DataInputFunctions {
 
 
     //Rudy
-    public String travelNodeInsertGenerator (int nodeID, int northNodeID, int northNodeDistance, int etc){
-        String SQLStatement;
-        return SQLStatement;
-    }
-
-    //Rudy
     public String shoppingListInsertGenerator(){
         String SQLStatement;
         return SQLStatement;

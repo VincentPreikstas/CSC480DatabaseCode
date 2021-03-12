@@ -18,13 +18,22 @@ Description: Create the Users table in the User and Login DB
 SQL:
 
 CREATE TABLE Users (
-	userID INT NOT NULL AUTO_INCREMENT,
+	userID INT AUTO_INCREMENT,
 	userName VARCHAR(100) NOT NULL,
 	passwordHash VARCHAR(1000),
 	userType VARCHAR (30),
 	email VARCHAR(100),
+userShoppingBool TINYINT DEFAULT 0,
 	PRIMARY KEY(userID)
 );
+
+
+
+
+
+
+
+
 
 LISTS DB
 
@@ -49,7 +58,7 @@ SQL:
 CREATE TABLE ShoppingListContents(
 	shoppingListID INT NOT NULL,
 	catName VARCHAR(100) NOT NULL,
-	quantityItem INT,
+	quantityItem INT DEFAULT 1,
 	PRIMARY KEY (shoppingListID, catName),
 	FOREIGN KEY (shoppingListID)
 		REFERENCES ShoppingLists (shoppingListID)
@@ -70,18 +79,66 @@ CREATE TABLE SharedShoppingLists(
 		ON DELETE CASCADE
 );
 
-Store Info, Nodes and Categories DB
-
-Description: Create Categories table in the Store Info, Nodes and Categories DB
+Description: Create the MissedItemsLists table in the lists database
 
 SQL:
+	CREATE TABLE MissedItemsLists (
+ 		 missedItemsListID INT AUTO_INCREMENT,
+  		 userID INT NOT NULL,
+ 		 PRIMARY KEY (missedItemsListID)
+  );
 
+Description: Create the MissedItems table in the lists database
+
+SQL:
+CREATE TABLE MissedItems (
+  	missedItemsListID INT NOT NULL,
+  	catName VARCHAR(45) NOT NULL,
+  	quantityItem INT NULL,
+ 	PRIMARY KEY (missedItemsListID, catName),
+	FOREIGN KEY (missedItemsListID)
+		REFERENCES MissedItemsLists (missedItemsListID)
+		ON DELETE CASCADE
+);
+
+Description: Create the ArchievedShoppingLists table in the lists database
+
+SQL:
+CREATE TABLE ArchivedShoppingLists (
+  	archivedShoppingListID INT AUTO_INCREMENT,
+ 	userID INT NOT NULL,
+ 	listName VARCHAR(100) NOT NULL,
+ 	dateShopped DATETIME DEFAULT CURRENT_TIMESTAMP ,
+ 	PRIMARY KEY (archivedShoppingListID)
+);
+
+Description: Create the ArchivedListsContents table in the lists database
+
+SQL:
+CREATE TABLE ArchivedListsContents (
+ 	archivedShoppingListID INT NOT NULL,
+  	catName VARCHAR(100) NOT NULL,
+  	quantityItem INT NOT NULL,
+ 	PRIMARY KEY (archivedShoppingListID, catName),
+	FOREIGN KEY (archivedShoppingListID)
+		REFERENCES ArchivedShoppingLists (archivedShoppingListID)
+		ON DELETE CASCADE
+
+);
+
+
+Store Info, Nodes and Categories DB
+
+Description: Create the categories table that contains category name, category description, stock number and sale status, with category name as primary key.
+
+SQL:
 CREATE TABLE Categories (
-	catName VARCHAR(100) NOT NULL,
-	catDescription VARCHAR(1000) NOT NULL,
-	catStockNum INT DEFAULT 1,
-    	saleBool BOOLEAN DEFAULT FALSE
-PRIMARY KEY (catName)
+  	catName VARCHAR(100) NOT NULL,
+ 	catDescription VARCHAR(1000) DEFAULT “None”,
+ 	catStockNum INT DEFAULT 0,
+  	saleBool TINYINT DEFAULT 0,
+	picURI VARCHAR(500) DEFAULT “None”,
+  	PRIMARY KEY (catName)
 );
 
 Description: Create PathFindingNodes table that will exist in the Store Info, Nodes and Categories DB database.
@@ -106,18 +163,10 @@ Description: Create a Departments table Store Info, Nodes and Categories DB data
 SQL:
 
 CREATE TABLE Departments (
-    	departmentID INT NOT NULL,
+    	departmentID INT AUTO_INCREMENT,
     	departmentName VARCHAR(100) NOT NULL,
 PRIMARY KEY(departmentID)
 );
-Description: Create the categories table that contains category name, category description, stock number and sale status, with category name as primary key.
-SQL:
-CREATE TABLE Categories (
-  	catName VARCHAR(100) NOT NULL,
- 	 catDescription VARCHAR(1000) CHARACTER SET 'DEFAULT' NULL,
- 	 stockNum INT NOT NULL,
-  	saleBool TINYINT NOT NULL,
-  PRIMARY KEY (catName)
 
 
 Description: Create the stores table that contains storeID, name, address, and storeLayout in Store info, Nodes, and categories DB .
@@ -125,49 +174,73 @@ Description: Create the stores table that contains storeID, name, address, and s
 SQL:
 
 CREATE TABLE Stores (
-	storeID INT AUTO_INCREMENT NOT NULL,
+	storeID INT AUTO_INCREMENT,
 	storeName VARCHAR(100) NOT NULL,
 	address VARCHAR(100) NOT NULL,
-	storeLayoutPicLocationString VARCHAR (100),
+	storeLayoutPicLocationString VARCHAR (1000),
 	PRIMARY KEY(storeID)
 
 );
 
-Description: Create PathNodeCatAssociation table in the Store Info, Nodes and Categories DB
+Description: Creates locations table in the Store Info, Nodes and Categories DB
 
 SQL:
 
-CREATE TABLE PathNodeCatAssociations(
-	pathNodeID INT NOT NULL,
-	catName VARCHAR(100) NOT NULL,
-	aisle INT,
-	rack INT,
-	shelf VARCHAR(10),
-	side VARCHAR(10),
-	PRIMARY KEY (pathNodeID, catName),
-	FOREIGN KEY (pathNodeID)
-		REFERENCES PathFindingNodes (pathNodeID),
-	FOREIGN KEY (catName)
-		REFERENCES Categories (catName)
-);
-
-Description: Creates PathNodeDeptAssociations table in the Store Info, Nodes and Categories DB
-
-SQL:
-
-CREATE TABLE PathNodeDeptAssociations (
-	pathNodeID INT,
-    departmentID INT,
-    PRIMARY KEY (pathNodeID, departmentID),
-    FOREIGN KEY (pathNodeID)
-		REFERENCES PathFindingNodes (pathNodeID),
+CREATE TABLE Locations (
+ 	locationID INT AUTO_INCREMENT,
+departmentID INT NOT NULL,
+  	aisle INT DEFAULT 0,
+ 	rack INT DEFAULT 0,
+  	shelf VARCHAR(10) DEFAULT “None”,
+  	side VARCHAR(10) DEFAULT “None”,
+  	PRIMARY KEY (locationID),
 	FOREIGN KEY (departmentID)
 		REFERENCES Departments (departmentID)
+);
+
+Description: Create CatLocationAssociations table in the store info, nodes and categories DB
+
+SQL:
+
+CREATE TABLE CatLocationAssociations (
+	locationID INT NOT NULL,
+	catName VARCHAR(100) NOT NULL,
+	PRIMARY KEY (locationID, catName),
+	FOREIGN KEY (locationID)
+		REFERENCES Locations(locationID)
+		ON DELETE CASCADE,
+	FOREIGN KEY (catName)
+		REFERENCES Categories(catName)
+		ON DELETE CASCADE
+);
+
+Description:
+
+SQL:
+
+CREATE TABLE LocationPathNodeAssociation (
+	locationID INT NOT NULL,
+	pathNodeID INT NOT NULL,
+	PRIMARY KEY (locationID, pathNodeID),
+	FOREIGN KEY (locationID)
+		REFERENCES Locations(locationID)
+		ON DELETE CASCADE,
+	FOREIGN KEY (pathNodeID)
+		REFERENCES PathFindingNodes(pathNodeID)
+		ON DELETE CASCADE
+
 );
 
 Maintenance/Table Manipulation
 
 USER DB
+
+Description: Deletes all tables from User DB
+
+SQL:
+
+DROP TABLE Users;
+
 LISTS DB
 
 Description: Deletes all tables from List DB
@@ -177,8 +250,13 @@ SQL:
 DROP TABLE SharedShoppingLists;
 DROP TABLE ShoppingListContents;
 DROP TABLE ShoppingLists;
+DROP TABLE ArchivedListsContents;
+DROP TABLE ArchivedShoppingLists;
+DROP TABLE MissedItems;
+DROP TABLE MissedItemsLists;
 
-Description: Puts dummy data into the lists DB
+
+Description: Puts dummy data into the lists DB (COULD BE OUTDATED)
 
 SQL:
 
@@ -206,6 +284,19 @@ DELETE FROM ShoppingLists WHERE shoppingListID = 1;
 
 
 Store Info, Nodes and Categories DB
+
+Description: Delete all tables from Store Info, Nodes and Categories DB
+SQL:
+
+DROP TABLE CatLocationAssociations;
+DROP TABLE LocationPathNodeAssociation;
+DROP TABLE Locations;
+DROP TABLE PathFindingNodes;
+DROP TABLE Stores;
+DROP TABLE Categories;
+DROP TABLE Departments;
+
+
 
 Description: inserting dummy data into the store DB
 
