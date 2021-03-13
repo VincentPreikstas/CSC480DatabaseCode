@@ -98,3 +98,690 @@ INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.PathFindingNo
 INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.PathFindingNodes (pathNodeID, northNodeID, northNodeDistance, eastNodeID, eastNodeDistance, southNodeID, southNodeDistance, westNodeID, westNodeDistance) VALUES (97, 0, 0, 24, 22, 35, 17, 36, 20);
 INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.PathFindingNodes (pathNodeID, northNodeID, northNodeDistance, eastNodeID, eastNodeDistance, southNodeID, southNodeDistance, westNodeID, westNodeDistance) VALUES (98, 0, 0, 0, 0, 1, 72, 0, 0);
 
+-- Departments Instantiation --
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Departments (departmentID,departmentName) VALUES (1,'Produce');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Departments (departmentID,departmentName) VALUES (2,'Cafe');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Departments (departmentID,departmentName) VALUES (3,'Pharmacy');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Departments (departmentID,departmentName) VALUES (4,'Bakery');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Departments (departmentID,departmentName) VALUES (5,'Seafood');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Departments (departmentID,departmentName) VALUES (6,'Meat');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Departments (departmentID,departmentName) VALUES (7,'Frozen');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Departments (departmentID,departmentName) VALUES (8,'Beverage');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Departments (departmentID,departmentName) VALUES (9,'Dairy');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Departments (departmentID,departmentName) VALUES (10,'Checkout');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Departments (departmentID,departmentName) VALUES (11,'Entrance');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Departments (departmentID,departmentName) VALUES (12,'Checkout');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Departments (departmentID,departmentName) VALUES (13,'Health & Beauty');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Departments (departmentID,departmentName) VALUES (14,'Aisles');
+
+-- Locations, Categories and Associations Instantiation --
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (1,11,0,0,'none','none');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (1,1);
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (2,3,0,0,'none','none');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (2,2);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('family planning booklets');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (2,'family planning booklets');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (3,1,0,0,'none','none');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (3,3);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('sun dried tomatoes');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (3,'sun dried tomatoes');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('minced garlic');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (3,'minced garlic');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('crushed garlic');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (3,'crushed garlic');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('prunes');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (3,'prunes');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('dried fruit');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (3,'dried fruit');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('raisins ');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (3,'raisins ');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (4,2,0,0,'none','none');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (4,4);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('pita bread');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (4,'pita bread');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('fresh coffee');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (4,'fresh coffee');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (5,5,0,0,'none','none');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (5,97);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('lobster');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (5,'lobster');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('shrimp');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (5,'shrimp');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('tilapia');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (5,'tilapia');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('salmon');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (5,'salmon');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (6,6,0,0,'none','none');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (6,84);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('sirloin steak');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (6,'sirloin steak');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('chicken breast');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (6,'chicken breast');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('pork tenderloin');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (6,'pork tenderloin');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (7,4,0,0,'none','none');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (7,5);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('rye bread');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (7,'rye bread');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('donuts');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (7,'donuts');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('white bread');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (7,'white bread');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (8,13,0,0,'none','none');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (8,42);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('shampoo');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (8,'shampoo');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('conditioner');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (8,'conditioner');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (9,10,0,0,'none','none');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (9,98);
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (10,9,0,0,'none','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (10,78);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('gelatin');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (10,'gelatin');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('yogurt');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (10,'yogurt');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('sharp cheese');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (10,'sharp cheese');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (11,9,0,0,'none','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (11,79);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('beer');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (11,'beer');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('fiesta cheese');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (11,'fiesta cheese');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (12,9,0,0,'none','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (12,80);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('butter');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (12,'butter');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('colby jack cheese');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (12,'colby jack cheese');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (13,9,0,0,'none','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (13,81);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('cheddar cheese');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (13,'cheddar cheese');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('mozzarella cheese');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (13,'mozzarella cheese');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (14,9,0,0,'none','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (14,82);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('eggs');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (14,'eggs');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('three cheese');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (14,'three cheese');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (15,9,0,0,'none','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (15,83);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('horseradish');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (15,'horseradish');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (16,9,0,0,'none','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (16,86);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('milk');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (16,'milk');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (17,9,0,0,'none','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (17,87);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('soy milk');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (17,'soy milk');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (18,9,0,0,'none','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (18,88);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('whipped topping');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (18,'whipped topping');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (19,9,0,0,'none','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (19,89);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('yeast');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (19,'yeast');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (20,7,0,0,'none','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (20,85);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('dinners');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (20,'dinners');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('ice cream cones');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (20,'ice cream cones');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (21,7,0,0,'none','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (21,86);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('juice');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (21,'juice');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('pizza');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (21,'pizza');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('ice cream toppings');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (21,'ice cream toppings');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (22,7,0,0,'none','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (22,87);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('strawberries');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (22,'strawberries');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('maraschino cherries');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (22,'maraschino cherries');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (23,7,0,0,'none','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (23,94);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('vegetables');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (23,'vegetables');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('whipped topping');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (23,'whipped topping');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (24,7,0,0,'none','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (24,95);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('ice cream');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (24,'ice cream');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('chocolate syrup');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (24,'chocolate syrup');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (25,7,0,0,'none','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (25,96);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('ice cream cakes');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (25,'ice cream cakes');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (26,8,0,0,'none','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (26,88);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('tomato  juice');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (26,'tomato  juice');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('lemonade');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (26,'lemonade');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (27,8,0,0,'none','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (27,89);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('arizone iced tea');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (27,'arizone iced tea');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (28,8,0,0,'none','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (28,90);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('bottled water 12 pack');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (28,'bottled water 12 pack');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (29,8,0,0,'none','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (29,91);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('kefir');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (29,'kefir');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (30,8,0,0,'none','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (30,92);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('seltzer');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (30,'seltzer');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (31,8,0,0,'none','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (31,93);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('kombucha');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (31,'kombucha');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (32,14,1,1,'top','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (32,6);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 6 pack cheap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (32,'toilet paper - 6 pack cheap');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (33,14,1,1,'top','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (33,6);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('light tampons');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (33,'light tampons');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('regular tampons');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (33,'regular tampons');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('super tampons');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (33,'super tampons');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (34,14,1,1,'middle','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (34,6);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 6 pack cheap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (34,'toilet paper - 6 pack cheap');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (35,14,1,1,'middle','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (35,6);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('super plus tampons');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (35,'super plus tampons');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('light pads');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (35,'light pads');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('regular pads');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (35,'regular pads');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (36,14,1,1,'bottom','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (36,6);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 6 pack cheap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (36,'toilet paper - 6 pack cheap');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (37,14,1,1,'bottom','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (37,6);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('super pads');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (37,'super pads');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('overnight pads');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (37,'overnight pads');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('panty liners');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (37,'panty liners');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (38,14,1,2,'top','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (38,7);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 12 pack cheap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (38,'toilet paper - 12 pack cheap');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (39,14,1,2,'top','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (39,7);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('softening cream');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (39,'softening cream');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('foot care file');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (39,'foot care file');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('bunion straightener');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (39,'bunion straightener');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (40,14,1,2,'middle','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (40,7);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 12 pack cheap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (40,'toilet paper - 12 pack cheap');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (41,14,1,2,'middle','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (41,7);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('foot repair cream');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (41,'foot repair cream');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('moisturizing socks');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (41,'moisturizing socks');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('ankle socks');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (41,'ankle socks');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (42,14,1,2,'bottom','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (42,7);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 12 pack cheap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (42,'toilet paper - 12 pack cheap');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (43,14,1,2,'bottom','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (43,7);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('compression socks');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (43,'compression socks');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('crew socks');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (43,'crew socks');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('stockings');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (43,'stockings');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (44,14,1,3,'top','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (44,8);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 24 pack cheap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (44,'toilet paper - 24 pack cheap');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (45,14,1,3,'top','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (45,8);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('hand wipes travel pack');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (45,'hand wipes travel pack');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('antibacterial wipes');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (45,'antibacterial wipes');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('sensitive skin hand wipes');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (45,'sensitive skin hand wipes');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (46,14,1,3,'middle','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (46,8);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 24 pack cheap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (46,'toilet paper - 24 pack cheap');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (47,14,1,3,'middle','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (47,8);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('sanitizing wipes');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (47,'sanitizing wipes');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('hand & face wipes');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (47,'hand & face wipes');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('face wipes');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (47,'face wipes');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (48,14,1,3,'bottom','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (48,8);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 24 pack cheap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (48,'toilet paper - 24 pack cheap');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (49,14,1,3,'bottom','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (49,8);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('alcohol wipes');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (49,'alcohol wipes');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('baby wipes');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (49,'baby wipes');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('flushable wipes');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (49,'flushable wipes');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (50,14,1,4,'top','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (50,9);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 6 pack expensive');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (50,'toilet paper - 6 pack expensive');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (51,14,1,4,'top','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (51,9);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('S/M incontinence underwear (women)');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (51,'S/M incontinence underwear (women)');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('S/M incontinence underwear (men)');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (51,'S/M incontinence underwear (men)');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('L incontinence underwear (women)');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (51,'L incontinence underwear (women)');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (52,14,1,4,'middle','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (52,9);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 6 pack expensive');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (52,'toilet paper - 6 pack expensive');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (53,14,1,4,'middle','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (53,9);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('L incontinence underwear (men)');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (53,'L incontinence underwear (men)');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('XL incontinence underwear (men)');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (53,'XL incontinence underwear (men)');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('XL incontinence underwear (women)');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (53,'XL incontinence underwear (women)');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (54,14,1,4,'bottom','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (54,9);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 6 pack expensive');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (54,'toilet paper - 6 pack expensive');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (55,14,1,4,'bottom','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (55,9);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('2XL incontinence underwear (women)');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (55,'2XL incontinence underwear (women)');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('2XL incontinence underwear (men)');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (55,'2XL incontinence underwear (men)');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('ped protector pads');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (55,'ped protector pads');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (56,14,1,5,'top','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (56,10);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 12 pack expensive');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (56,'toilet paper - 12 pack expensive');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (57,14,1,5,'top','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (57,10);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('antibacterial bar soap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (57,'antibacterial bar soap');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (58,14,1,5,'middle','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (58,10);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 12 pack expensive');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (58,'toilet paper - 12 pack expensive');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (59,14,1,5,'middle','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (59,10);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('moisturizing bar soap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (59,'moisturizing bar soap');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('gentle bar soap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (59,'gentle bar soap');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('sensitive skin bar soap ');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (59,'sensitive skin bar soap ');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (60,14,1,5,'bottom','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (60,10);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 12 pack expensive');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (60,'toilet paper - 12 pack expensive');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (61,14,1,5,'bottom','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (61,10);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('hydrating cleansing bar');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (61,'hydrating cleansing bar');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('natural bar soap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (61,'natural bar soap');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('age defying bar soap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (61,'age defying bar soap');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (62,14,1,6,'top','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (62,11);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 24 pack expensive');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (62,'toilet paper - 24 pack expensive');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (63,14,1,6,'top','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (63,11);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('aloe liquid hand soap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (63,'aloe liquid hand soap');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('antibacterial liquid hand soap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (63,'antibacterial liquid hand soap');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('sensitive skin liquid soap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (63,'sensitive skin liquid soap');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (64,14,1,6,'middle','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (64,11);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 24 pack expensive');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (64,'toilet paper - 24 pack expensive');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (65,14,1,6,'middle','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (65,11);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('hydrating liquid soap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (65,'hydrating liquid soap');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('natural liquid soap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (65,'natural liquid soap');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('gentle liquid soap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (65,'gentle liquid soap');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (66,14,1,6,'bottom','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (66,11);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('toilet paper - 24 pack expensive');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (66,'toilet paper - 24 pack expensive');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (67,14,1,6,'bottom','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (67,11);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('fragrance free liquid soap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (67,'fragrance free liquid soap');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('coconut milk liquid soap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (67,'coconut milk liquid soap');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('gel liquid soap');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (67,'gel liquid soap');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (68,14,2,1,'top','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (68,17);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('16 oz energy drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (68,'16 oz energy drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (69,14,2,1,'top','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (69,17);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('cola - 2L');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (69,'cola - 2L');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet cola - 2L');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (69,'diet cola - 2L');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (70,14,2,1,'middle','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (70,17);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('12 cans energy drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (70,'12 cans energy drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (71,14,2,1,'middle','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (71,17);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('cola - 6 pack bottle');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (71,'cola - 6 pack bottle');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet cola - 6 pack bottle');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (71,'diet cola - 6 pack bottle');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (72,14,2,1,'bottom','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (72,17);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('24 cans energy drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (72,'24 cans energy drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (73,14,2,1,'bottom','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (73,17);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('cola - 12 pack can');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (73,'cola - 12 pack can');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet cola - 12 pack can');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (73,'diet cola - 12 pack can');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (74,14,2,2,'top','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (74,16);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('16 oz sugar free energy drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (74,'16 oz sugar free energy drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (75,14,2,2,'top','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (75,16);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('lemon lime - 2L');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (75,'lemon lime - 2L');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet lemon lime - 2L');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (75,'diet lemon lime - 2L');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (76,14,2,2,'middle','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (76,16);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('12 can sugar free energy drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (76,'12 can sugar free energy drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (77,14,2,2,'middle','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (77,16);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('lemon lime - 6 pack bottle');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (77,'lemon lime - 6 pack bottle');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet lemon lime - 6 pack bottle');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (77,'diet lemon lime - 6 pack bottle');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (78,14,2,2,'bottom','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (78,16);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('24 can sugar free energy drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (78,'24 can sugar free energy drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (79,14,2,2,'bottom','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (79,16);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('lemon lime - 12 pack can');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (79,'lemon lime - 12 pack can');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet lemon lime - 12 pack can');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (79,'diet lemon lime - 12 pack can');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (80,14,2,3,'top','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (80,15);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('16 oz zero carb energy drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (80,'16 oz zero carb energy drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (81,14,2,3,'top','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (81,15);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('orange - 2L');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (81,'orange - 2L');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet orange - 2L');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (81,'diet orange - 2L');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (82,14,2,3,'middle','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (82,15);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('12 can zero carb energy drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (82,'12 can zero carb energy drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (83,14,2,3,'middle','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (83,15);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('orange - 6 pack bottle');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (83,'orange - 6 pack bottle');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet orange - 6 pack bottle');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (83,'diet orange - 6 pack bottle');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (84,14,2,3,'bottom','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (84,15);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('24 can sugar free energy drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (84,'24 can sugar free energy drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (85,14,2,3,'bottom','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (85,15);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('orange - 12 pack can');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (85,'orange - 12 pack can');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet orange - 12 pack can');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (85,'diet orange - 12 pack can');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (86,14,2,4,'top','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (86,14);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('16 oz coffee energy drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (86,'16 oz coffee energy drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (87,14,2,4,'top','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (87,14);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('citrus - 2L');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (87,'citrus - 2L');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet citrus - 2L');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (87,'diet citrus - 2L');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (88,14,2,4,'middle','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (88,14);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('12 can coffee energy drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (88,'12 can coffee energy drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (89,14,2,4,'middle','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (89,14);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('citrus - 6 pack bottle');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (89,'citrus - 6 pack bottle');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet citrus - 6 pack bottle');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (89,'diet citrus - 6 pack bottle');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (90,14,2,4,'bottom','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (90,14);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('24 can coffee energy drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (90,'24 can coffee energy drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (91,14,2,4,'bottom','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (91,14);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('citrus - 12 pack can');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (91,'citrus - 12 pack can');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet citrus - 12 pack can');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (91,'diet citrus - 12 pack can');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (92,14,2,5,'top','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (92,13);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('9.5 oz iced coffee drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (92,'9.5 oz iced coffee drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (93,14,2,5,'top','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (93,13);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('root beer - 2L');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (93,'root beer - 2L');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet root beer - 2L');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (93,'diet root beer - 2L');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (94,14,2,5,'middle','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (94,13);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('4 can iced coffee drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (94,'4 can iced coffee drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (95,14,2,5,'middle','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (95,13);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('root beer - 6 pack bottle');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (95,'root beer - 6 pack bottle');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet root beer - 6 pack bottle');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (95,'diet root beer - 6 pack bottle');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (96,14,2,5,'bottom','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (96,13);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('12 can iced coffee drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (96,'12 can iced coffee drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (97,14,2,5,'bottom','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (97,13);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('root beer - 12 pack can');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (97,'root beer - 12 pack can');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet root beer - 12 pack can');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (97,'diet root beer - 12 pack can');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (98,14,2,6,'top','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (98,12);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('6.5 oz espresso drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (98,'6.5 oz espresso drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (99,14,2,6,'top','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (99,12);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('creme soda - 2L');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (99,'creme soda - 2L');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet creme soda - 2L');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (99,'diet creme soda - 2L');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (100,14,2,6,'middle','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (100,12);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('4 can espresso drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (100,'4 can espresso drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (101,14,2,6,'middle','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (101,12);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('creme soda - 6 pack bottle');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (101,'creme soda - 6 pack bottle');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet creme soda - 6 pack bottle');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (101,'diet creme soda - 6 pack bottle');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (102,14,2,6,'bottom','right');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (102,12);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('12 can espresso drink');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (102,'12 can espresso drink');
+
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Locations (locationID,departmentID,aisle,rack,shelf,side) VALUES (103,14,2,6,'bottom','left');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (103,12);
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('creme soda - 12 pack can');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (103,'creme soda - 12 pack can');
+INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('diet creme soda - 12 pack can');
+INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (103,'diet creme soda - 12 pack can');
+
+

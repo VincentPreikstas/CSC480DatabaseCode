@@ -20,8 +20,8 @@ public class Main {
 
     public static void main (String[] args)throws IOException {
         String pathNodeFilePath = "PathNodeMap.xlsx";
-        String storeDataFilePath = "GriceryStoreData.xlsx";
-
+        String storeDataFilePath = "GroceryStoreData.xlsx";
+        String departmentsDataFilePath = "DepartmentData.xlsx";
 
         //FOLLOWING EXAMPLE TAKEN FROM https://www.codejava.net/coding/how-to-read-excel-files-in-java-using-apache-poi
         //Example shows how to iterate over every box in an excel sheet row by row left to right
@@ -86,6 +86,15 @@ public class Main {
             myDataInputTool.pathNodeInstantiator(pathNodeFilePath, fileWriter);
             fileWriter.write("\n");
 
+            //DEPARTMENTS INSTANTIATION CALL
+            fileWriter.write("-- Departments Instantiation --\n");
+            myDataInputTool.departmentsInstantiator(departmentsDataFilePath, fileWriter);
+            fileWriter.write("\n");
+
+            //LOCATION INSTANTIATION, CATEGORY INSTANTIATION, LOCATION NODE ASSOCIATION AND CATEGORY LOCATION ASSOCIATION CALL
+            fileWriter.write("-- Locations, Categories and Associations Instantiation --\n");
+            myDataInputTool.locationCategoriesAndRelationsInstantiator(storeDataFilePath, fileWriter);
+            fileWriter.write("\n");
 
             //Closing writing object (file writing is done)
             fileWriter.close();
