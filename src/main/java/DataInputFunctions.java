@@ -181,6 +181,7 @@ public class DataInputFunctions {
 
                     //Write Categories And Categories Location Associations
                     for (String category : categories){
+                        category.trim();
                         if (category.equals("none")){
                             //Do Nothing
                         } else {
