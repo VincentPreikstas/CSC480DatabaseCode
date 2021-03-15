@@ -205,7 +205,7 @@ public class DataInputFunctions {
 
     //Nazar
     public String catInsertSQLGenerator (String catName, String catDescription, int catStockNum, boolean saleBool, String picURI){
-        return "INSERT INTO database (catName, catDescription, catStockNum, saleBool, picURI) VALUES " +
+        return "INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.PathFindingNodes (catName, catDescription, catStockNum, saleBool, picURI) VALUES " +
                 "(" + catName + ", " + catDescription + ", " + catStockNum + ", " + saleBool + ", " + picURI + ");";
     }
 
@@ -213,7 +213,7 @@ public class DataInputFunctions {
 
     //Nazar
     public String locationInsertSQLGenerator (int locationID, int aisle, int rack, String shelf, String side){
-        return "INSERT INTO database (locationID, aisle, rack, shelf, side) VALUES " +
+        return "INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.PathFindingNodes (locationID, aisle, rack, shelf, side) VALUES " +
                 "(" + locationID + ", " + aisle + ", " + rack + ", " + shelf + ", " + side + ");";
     }
 
