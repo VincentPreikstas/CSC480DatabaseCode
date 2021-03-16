@@ -20,7 +20,7 @@ public class Main {
 
     public static void main (String[] args)throws IOException {
         String pathNodeFilePath = "PathNodeMap.xlsx";
-        String storeDataFilePath = "GroceryStoreData.xlsx";
+        String storeDataFilePath = "V2GroceryStoreData.xlsx";
         String departmentsDataFilePath = "DepartmentData.xlsx";
 
         //FOLLOWING EXAMPLE TAKEN FROM https://www.codejava.net/coding/how-to-read-excel-files-in-java-using-apache-poi

@@ -187,7 +187,7 @@ public class DataInputFunctions {
                         } else {
                             statement = "INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('" + category + "');\n";
                             fileWriter.write(statement);
-                            statement = "INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (" + locationID +",'" + category + "');\n";
+                            statement = "INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (" + locationID +",'" + category + "');\n";
                             fileWriter.write(statement);
                         }
                     }
