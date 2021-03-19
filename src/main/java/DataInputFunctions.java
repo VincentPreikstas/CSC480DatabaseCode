@@ -96,7 +96,7 @@ public class DataInputFunctions {
 
     }
 
-    public void locationCategoriesAndRelationsInstantiator(String storeInfoFilePath, FileWriter fileWriter) throws IOException{
+    public void locationItemsAndRelationsInstantiator(String storeInfoFilePath, FileWriter fileWriter) throws IOException{
         int locationID = 0;
         int nodeID = 0;
         int departmentID = 0;
@@ -105,7 +105,7 @@ public class DataInputFunctions {
         String shelf = "";
         String side = "";
         String statement = "";
-        String[] categories = new String[0];
+        String[] items = new String[0];
 
         int workAround = 0;
         int counter = 0;
@@ -164,9 +164,9 @@ public class DataInputFunctions {
                             side = cell.getStringCellValue();
                             counter++;
                         } else {
-                            //categories
+                            //items
                             //System.out.print(cell.getStringCellValue()+ "\n");
-                            categories = cell.getStringCellValue().split(",");
+                            items = cell.getStringCellValue().split(",");
                             counter++;
                         }
                     }
@@ -179,15 +179,15 @@ public class DataInputFunctions {
                     statement = "INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.LocationPathNodeAssociation (locationID,pathNodeID) VALUES (" + locationID + "," + nodeID + ");\n";
                     fileWriter.write(statement);
 
-                    //Write Categories And Categories Location Associations
-                    for (String category : categories){
-                        category.trim();
-                        if (category.equals("none")){
+                    //Write Items and Location Associations
+                    for (String item : items){
+                        item = item.trim();
+                        if (item.equals("none")){
                             //Do Nothing
                         } else {
-                            statement = "INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Categories (catName) VALUES ('" + category + "');\n";
+                            statement = "INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Items (itemName) VALUES ('" + item + "');\n";
                             fileWriter.write(statement);
-                            statement = "INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.CatLocationAssociations (locationID,catName) VALUES (" + locationID +",'" + category + "');\n";
+                            statement = "INSERT IGNORE INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.ItemLocationAssociations (locationID,itemName) VALUES (" + locationID +",'" + item + "');\n";
                             fileWriter.write(statement);
                         }
                     }
@@ -203,10 +203,11 @@ public class DataInputFunctions {
         }
     }
 
+
     //Nazar
-    public String catInsertSQLGenerator (String catName, String catDescription, int catStockNum, boolean saleBool, String picURI){
-        return "INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.PathFindingNodes (catName, catDescription, catStockNum, saleBool, picURI) VALUES " +
-                "(" + catName + ", " + catDescription + ", " + catStockNum + ", " + saleBool + ", " + picURI + ");";
+    public String itemInsertSQLGenerator (String itemName, String itemDescription, int itemStockNum, boolean saleBool, String picURI){
+        return "INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Items (itemName, itemDescription, itemStockNum, saleBool, picURI) VALUES " +
+                "(" + itemName + ", " + itemDescription + ", " + itemStockNum + ", " + saleBool + ", " + picURI + ");";
     }
 
 

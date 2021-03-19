@@ -91,9 +91,9 @@ public class Main {
             myDataInputTool.departmentsInstantiator(departmentsDataFilePath, fileWriter);
             fileWriter.write("\n");
 
-            //LOCATION INSTANTIATION, CATEGORY INSTANTIATION, LOCATION NODE ASSOCIATION AND CATEGORY LOCATION ASSOCIATION CALL
-            fileWriter.write("-- Locations, Categories and Associations Instantiation --\n");
-            myDataInputTool.locationCategoriesAndRelationsInstantiator(storeDataFilePath, fileWriter);
+            //LOCATION INSTANTIATION, ITEM INSTANTIATION, LOCATION NODE ASSOCIATION AND CATEGORY LOCATION ASSOCIATION CALL
+            fileWriter.write("-- Locations, Items and Associations Instantiation --\n");
+            myDataInputTool.locationItemsAndRelationsInstantiator(storeDataFilePath, fileWriter);
             fileWriter.write("\n");
 
             //Closing writing object (file writing is done)
