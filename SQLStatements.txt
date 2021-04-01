@@ -42,7 +42,7 @@ Description: Create the ShoppingLists table in the lists database
 SQL:
 
 CREATE TABLE ShoppingLists(
-	shoppingListID INT NOT NULL,
+	shoppingListID INT AUTO_INCREMENT,
 userID INT NOT NULL,
 	listName VARCHAR(100) NOT NULL,
 	listDateCreated DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -62,7 +62,7 @@ CREATE TABLE ShoppingListContents(
 	quantityItem INT DEFAULT 1,
     itemNote VARCHAR(1000),
     shoppedTime DATETIME,
-    itemMissedFlat TINYINT DEFAULT 0,
+    itemMissedFlag TINYINT DEFAULT 0,
 	PRIMARY KEY (shoppingListID, itemName),
 	FOREIGN KEY (shoppingListID)
 		REFERENCES ShoppingLists (shoppingListID)
@@ -92,7 +92,7 @@ SQL:
 CREATE TABLE Items (
   	itemName VARCHAR(100) NOT NULL,
  	itemDescription VARCHAR(1000) DEFAULT "None",
- 	itemStockNum INT DEFAULT 0,
+ 	itemStockBool TINYINT DEFAULT 1,
   	saleBool TINYINT DEFAULT 0,
 	picURI VARCHAR(500) DEFAULT "None",
   	PRIMARY KEY (itemName)

@@ -19,7 +19,7 @@ import java.util.List;
 public class Main {
 
     public static void main (String[] args)throws IOException {
-        String pathNodeFilePath = "PathNodeMap.xlsx";
+        String pathNodeFilePath = "V2PathNodeMap.xlsx";
         String storeDataFilePath = "V2GroceryStoreData.xlsx";
         String departmentsDataFilePath = "DepartmentData.xlsx";
 
@@ -80,6 +80,11 @@ public class Main {
 
             //Create file writing object to be passed to functions
             FileWriter fileWriter = new FileWriter("formattedSQL.txt");
+
+            //STORE INSTANTIATION
+            fileWriter.write("-- Store Instantiation --\n");
+            myDataInputTool.storeInstantiator(fileWriter);
+            fileWriter.write("\n");
 
             //PATH NODE INSTANTIATION CALL
             fileWriter.write("-- Path Node Instantiation --\n");

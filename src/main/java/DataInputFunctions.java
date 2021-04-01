@@ -16,6 +16,10 @@ public class DataInputFunctions {
 
     }
 
+    public void storeInstantiator(FileWriter fileWriter) throws IOException{
+        fileWriter.write("INSERT INTO Traveling_Groceries_Nodes_Store_Info_And_Categories_DB.Stores (storeName, address) VALUES ('Definitely Not Price Chopper', 'Merica St. Oswego');\n");
+    }
+
     public void pathNodeInstantiator(String nodeFilePath, FileWriter fileWriter) throws IOException{
         try{
             FileInputStream inputStream = new FileInputStream(nodeFilePath);
