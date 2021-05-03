@@ -147,6 +147,17 @@ public class DataInputFunctions {
                 "\tPRIMARY KEY(userID)\n" +
                 ");\n\n");
 
+        fileWriter.write("CREATE TABLE Traveling_Groceries_User_And_Login_DB.Stats (\n" +
+                "\tuserID VARCHAR(50) NOT NULL,\n" +
+                "\titemsShopped INT NOT NULL DEFAULT 0,\n" +
+                "\ttimeShopped INT NOT NULL DEFAULT 0,\n" +
+                "\tPRIMARY KEY (userID),\n" +
+                "\tFOREIGN KEY(userID)\n" +
+                "\t\tREFERENCES Users(userID)\n" +
+                "\t\tON DELETE CASCADE\n" +
+                "\n" +
+                ");\n\n");
+
         fileWriter.write("-- End DB Instantiation --\n");
 
     }
