@@ -124,6 +124,17 @@ CREATE TABLE Traveling_Groceries_User_And_Login_DB.Users (
 	PRIMARY KEY(userID)
 );
 
+CREATE TABLE Traveling_Groceries_User_And_Login_DB.Stats (
+	userID VARCHAR(50) NOT NULL,
+	itemsShopped INT NOT NULL DEFAULT 0,
+	timeShopped INT NOT NULL DEFAULT 0,
+	PRIMARY KEY (userID),
+	FOREIGN KEY(userID)
+		REFERENCES Users(userID)
+		ON DELETE CASCADE
+
+);
+
 -- End DB Instantiation --
 
 -- Store Instantiation --
