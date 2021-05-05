@@ -18,7 +18,7 @@ Description: Create the Users table in the User and Login DB
 SQL:
 
 CREATE TABLE Users (
-	userID INT AUTO_INCREMENT,
+	userID VARCHAR(50) NOT NULL,
 	userType VARCHAR (30) NOT NULL,
 	email VARCHAR(100),
 	userShoppingBool TINYINT DEFAULT 0,
@@ -26,13 +26,19 @@ CREATE TABLE Users (
 	PRIMARY KEY(userID)
 );
 
+Description: Create the Stats table in the User and Login DB
 
+SQL:
 
-
-
-
-
-
+CREATE TABLE Traveling_Groceries_User_And_Login_DB.Stats (
+	userID VARCHAR(50) NOT NULL,
+	itemsShopped INT NOT NULL DEFAULT 0,
+	timeShopped INT NOT NULL DEFAULT 0,
+	PRIMARY KEY (userID),
+	FOREIGN KEY(userID)
+		REFERENCES Users(userID)
+		ON DELETE CASCADE
+);
 
 LISTS DB
 
@@ -43,12 +49,12 @@ SQL:
 
 CREATE TABLE ShoppingLists(
 	shoppingListID INT AUTO_INCREMENT,
-userID INT NOT NULL,
+userID VARCHAR(50) NOT NULL,
 	listName VARCHAR(100) NOT NULL,
 	listDateCreated DATETIME DEFAULT CURRENT_TIMESTAMP,
 listPublicStatus VARCHAR(10) DEFAULT "private",
 listShoppedFlag TINYINT DEFAULT 0,
-shopperUserID INT,
+shopperUserID VARCHAR(50 DEFAULT “none”,
 PRIMARY KEY (shoppingListID)
 );
 
@@ -75,7 +81,7 @@ Description: Create the SharedShoppingLists table in the lists database
 SQL:
 
 CREATE TABLE SharedShoppingLists(
-	userID INT NOT NULL,
+	userID VARCHAR(50) NOT NULL,
 	shoppingListID INT NOT NULL,
 	PRIMARY KEY (userID, shoppingListID),
 	FOREIGN KEY (shoppingListID)
@@ -252,8 +258,6 @@ DROP TABLE PathFindingNodes;
 DROP TABLE Stores;
 DROP TABLE Categories;
 DROP TABLE Departments;
-
-
 
 
 
